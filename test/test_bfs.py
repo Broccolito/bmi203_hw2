@@ -18,34 +18,34 @@ def test_bfs_traversal():
     
     pass
 
-# def test_bfs():
-#     """
-#     TODO: Write your unit test for your breadth-first 
-#     search here. You should generate an instance of a Graph
-#     class using the 'citation_network.adjlist' file 
-#     and assert that nodes that are connected return 
-#     a (shortest) path between them.
+def test_bfs():
+    """
+    TODO: Write your unit test for your breadth-first 
+    search here. You should generate an instance of a Graph
+    class using the 'citation_network.adjlist' file 
+    and assert that nodes that are connected return 
+    a (shortest) path between them.
     
-#     Include an additional test for nodes that are not connected 
-#     which should return None. 
-#     """
+    Include an additional test for nodes that are not connected 
+    which should return None. 
+    """
 
-#     g = Graph('citation_network.adjlist')
-#     start_node = 'node1'  # Replace with actual start node in 'citation_network.adjlist'
-#     end_node = 'node2'    # Replace with actual end node in 'citation_network.adjlist'
+    g = Graph('./data/citation_network.adjlist')
+    start_node = 'Franklin Huang'
+    end_node = '34912807'
     
-#     # Test for connected nodes
-#     path = g.bfs(start_node, end_node)
-#     assert path is not None
-#     assert path[0] == start_node
-#     assert path[-1] == end_node
+    # Test for connected nodes
+    path = g.bfs(start_node, end_node)
+    assert path is not None
+    assert path[0] == start_node
+    assert path[-1] == end_node
     
-#     # Test for non-connected nodes
-#     non_connected_node = 'isolated_node'  # Replace with an actual node that is not connected
-#     path = g.bfs(start_node, non_connected_node)
-#     assert path is None
+    # Test for non-connected nodes
+    non_connected_node = '492357816'  # Replace with an actual node that is not connected
+    path = g.bfs(start_node, non_connected_node)
+    assert path is None
 
-#     pass
+    pass
 
 def test_bfs_empty_graph():
     g = Graph('./data/empty_network.adjlist')  # Make sure this file represents an empty graph
@@ -62,10 +62,10 @@ def test_bfs_nonexistent_end_node():
     result = g.bfs('31806696', 'nonexistent_node')  # Replace 'start_node' with an actual node
     assert result is None
 
-# def test_bfs_unconnected_graph():
-#     g = Graph('unconnected_network.adjlist')  # Make sure this file represents an unconnected graph
-#     result = g.bfs('start_node')  # Replace 'start_node' with an actual node in the graph
-#     # Assert based on the expected behavior in an unconnected graph
+def test_bfs_unconnected_graph():
+    g = Graph('./data/unconnected_network.adjlist')
+    result = g.bfs('34916529')
+    assert len(result) == 1
 
 # # Example of a test case that is expected to fail and raise an exception
 def test_bfs_invalid_file():
