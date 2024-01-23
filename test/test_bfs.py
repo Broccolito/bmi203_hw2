@@ -52,15 +52,15 @@ def test_bfs_empty_graph():
     result = g.bfs('any_node')
     assert result is None
 
-# def test_bfs_nonexistent_start_node():
-#     g = Graph('./data/tiny_network.adjlist')  # Replace with a file that represents a normal graph
-#     result = g.bfs('nonexistent_node')
-#     assert result is None
+def test_bfs_nonexistent_start_node():
+    g = Graph('./data/tiny_network.adjlist')  # Replace with a file that represents a normal graph
+    result = g.bfs('nonexistent_node')
+    assert result is None
 
-# def test_bfs_nonexistent_end_node():
-#     g = Graph('normal_network.adjlist')
-#     result = g.bfs('start_node', 'nonexistent_node')  # Replace 'start_node' with an actual node
-#     assert result is None
+def test_bfs_nonexistent_end_node():
+    g = Graph('./data/tiny_network.adjlist')
+    result = g.bfs('31806696', 'nonexistent_node')  # Replace 'start_node' with an actual node
+    assert result is None
 
 # def test_bfs_unconnected_graph():
 #     g = Graph('unconnected_network.adjlist')  # Make sure this file represents an unconnected graph
@@ -68,6 +68,6 @@ def test_bfs_empty_graph():
 #     # Assert based on the expected behavior in an unconnected graph
 
 # # Example of a test case that is expected to fail and raise an exception
-# def test_bfs_invalid_file():
-#     with pytest.raises(Exception):
-#         Graph('invalid_file.adjlist')
+def test_bfs_invalid_file():
+    with pytest.raises(Exception):
+        Graph('invalid_file.adjlist')
