@@ -1,6 +1,6 @@
 # write tests for bfs
 import pytest
-from search import graph
+from search import Graph
 
 def test_bfs_traversal():
     """
@@ -12,10 +12,10 @@ def test_bfs_traversal():
     """
 
     g = Graph('./data/tiny_network.adjlist')
-    result = g.bfs('start_node')  # Replace 'start_node' with an actual start node in 'tiny_network.adjlist'
-    expected_number_of_nodes = 5  # Replace with the expected number of nodes in the BFS traversal
+    result = g.bfs('31806696')
+    expected_number_of_nodes = 30
     assert len(result) == expected_number_of_nodes
-
+    
     pass
 
 # def test_bfs():
@@ -47,13 +47,13 @@ def test_bfs_traversal():
 
 #     pass
 
-# def test_bfs_empty_graph():
-#     g = Graph('empty_network.adjlist')  # Make sure this file represents an empty graph
-#     result = g.bfs('any_node')
-#     assert result is None
+def test_bfs_empty_graph():
+    g = Graph('./data/empty_network.adjlist')  # Make sure this file represents an empty graph
+    result = g.bfs('any_node')
+    assert result is None
 
 # def test_bfs_nonexistent_start_node():
-#     g = Graph('normal_network.adjlist')  # Replace with a file that represents a normal graph
+#     g = Graph('./data/tiny_network.adjlist')  # Replace with a file that represents a normal graph
 #     result = g.bfs('nonexistent_node')
 #     assert result is None
 
