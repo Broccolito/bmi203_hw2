@@ -7,14 +7,6 @@ Author: Wanjun Gu
 
 
 
-To-do:
-
-Trace from one faculty to another
-
-Add github badge
-
-
-
 # Assignment Overview
 The purpose of this assignment is to get you comfortable working with graph structures and to implement a breadth-first search function to traverse the graph and find the shortest path between nodes.
 
