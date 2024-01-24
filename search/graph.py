@@ -71,6 +71,3 @@ class Graph:
         # If no path to end exists
         return None
 
-# g = Graph('tiny_network.adjlist')
-# result = g.bfs('start_node') 
-# print(result)
