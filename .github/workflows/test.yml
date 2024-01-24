@@ -1,5 +1,5 @@
 # .github/workflows/test.yaml
-name: search
+name: Protest Testing
 on: push
 
 jobs:
